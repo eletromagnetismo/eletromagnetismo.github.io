@@ -128,7 +128,7 @@ a:active {
 }
 
 .blocototaldrude{
-    height:150px;
+    height: auto;
     margin-top: 20px;
     width: 100%;
     background-image:  url("../images/fundoproducao2.jpg");
@@ -136,7 +136,7 @@ a:active {
 }
 
 .perguntas{
-    text-align: left !important;
+    text-align: justify !important;
 }
 
 .image{
