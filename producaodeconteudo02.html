@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Trabalho do curso de Funndamentos de Eletromagnetismo">
+    <meta name="keywords" content="modelo de drude, corrente elétrica, eletomagntismo">
+    <meta name="author" content="Guilherme Francisco Antunes Silva">
+    <title>Modelo de Drude</title>
+    <script src="script/script.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon2/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon2/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon2/favicon-16x16.png">
+    <link rel="manifest" href="/favicon2/site.webmanifest">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="style/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto+Condensed&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<body>
+ <div class="telacheia">
+  <nav class=" menu navbar fixed-top navbar-light">
+    <a class="nav-link" href="index.html">MENU </a>
+    <a class="nav-link" href="#historia">História </a>
+    <a class="nav-link " href="#modelo">O Modelo</a>
+    <a class="nav-link " href="#sentido">Sentido, Direção e Condutividade</a>
+    <a class="nav-link " href="#leideohm">Lei de Ohm</a>
+    <a class="nav-link " href="#aplicando">Aplicando Conceitos</a>
+    <a class="nav-link " href="#quiz">Teste o Seu Conhecimento</a>
+    <a class="nav-link " href="#referencias">Referências</a>
+
+ </div>
+
+  </nav>
+
+  <div class="mobile">
+    <div class="menu pos-f-t">
+      <div class="collapse" id="navbarToggleExternalContent">
+        <div class="menu p-4">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+                <a class="nav-link" href="index.html">MENU </a>
+              </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="#historia">História </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#modelo">O Modelo</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="#sentido">Sentido, Direção e Condutividade</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="#leideohm">Lei de Ohm</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="#aplicando">Aplicando Conceitos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="#quiz">Teste o Seu Conhecimento</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="#referencias">Referências</a>
+            </li>
+
+
+          </ul>
+        </div>
+      </div>
+      <nav class="navbar fixed-top navbar-dark menu">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Alterna navegação">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </nav>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+<div class="apresentacaodrude">
+        <div class="overlay">
+        <div class="apresentacaotext">
+          <h1>MODELO DE DRUDE</h1>
+        </div>
+
+        </div>
+      </div>
+      <span id="historia"></span>
+<div   class="principal" >
+        <div class="bloco">
+          <h3 id="particulaelementar"> História </h3>
+                    <div class="row">
+                      <div class="col-md conteudo">
+                        <br/>
+                        <img src="images/paul.jpg"  alt="Drude" class="image" ><br/>
+                        <i>Paul Drude (1863 – 1906)</i>
+                      </div>
+                      <div class="col-md conteudo">
+                        <p class="trabalho">
+                          &nbsp &nbsp Após a descoberta do elétron, pelo físico Joseph John Thomson, em 1897, utilizando os raios catódicos,
+                          a comunidade científica, alguns anos à frente, se deparou com o início do desenvolvimento da teoria quântica.
+                          Assim, os físicos estavam buscando estudar o estado sólido da matéria, explicando os fenômenos ocorridos nos
+                          materiais.</br>
+                          &nbsp &nbsp Durante esses estudos, o físico alemão Paul Drude (1863- 1906), propôs um modelo que explica a condução
+                          elétrica dos metais.
+                        </p>
+                      </div>
+                    </div>
+        </div>
+        <div class="blocototaldrude ">
+          <div class="overlay">
+          <div class='conteudo '>
+                <p><span class='citacao'>"O importante é não parar de questionar. A curiosidade tem sua própria razão de existir." (EINSTEIN, Albert).</span><br/></p>
+          </div>
+        </div>
+        </div>
+        <span id ='modelo'></span>
+  <div class="bloco">
+        <div class="container ">
+
+          <div class="row">
+
+            <div class="col-md conteudo">
+
+              <h3 >O Modelo</h3>
+              <br>
+                  <p class="trabalho">
+                    Para a formulação do modelo, Drude considerou 4 hipóteses, sendo elas:
+                 </p>
+            </div>
+          </div>
+            <div class="row justify-content-md-center">
+              <div class="col-md-8">
+
+                 <p class="perguntas">&#9679; Não existe interação elétron – elétron;</p>
+                 <p class="perguntas">&#9679; As colisões ocorrem de forma inesperada, de forma que não exista movimento dos íons;</p>
+                 <p class="perguntas">&#9679; Existe um tempo médio entre as colisões;</p>
+                 <p class="perguntas">&#9679; O elétron perde a memória sobre a trajetória e velocidade, após cada colisão.</p>
+              </div>
+
+            </div>
+            <div class="row justify-content-md-center" >
+              <div class="col-md conteudo">
+                <p class="trabalho">
+                  Agora considerando um condutor, em equilíbrio eletrostático, temos algumas observações:
+                </p>
+              </div>
+            </div>
+            <div class="row justify-content-md-center" >
+                <div class="col-md-8">
+                  <p class="perguntas">&#9679; O campo elétrico é nulo em seu interior, logo não existe corrente elétrica;</p>
+                  <p class="perguntas">&#9679; Mesmo não existindo corrente elétrica, existe um movimento de elétrons no interior do condutor.
+                    Esse movimento se equipara ao movimento das moléculas de um gás ideal. O movimento ocorre de forma aleatória
+                    com uma velocidade muita alta, da faixa de 10<sup>6</sup>m/s;</p>
+                  <p class="perguntas">&#9679; Os elétrons são atraídos pelos íons, assim não escapam do material;</p>
+                  <p class="perguntas">&#9679; O movimento é caótico, logo não existe um fluxo efetivo em nenhuma direção, não existindo corrente elétrica.</p>
+               </div>
+              </div>
+              <div class="row justify-content-md-center" >
+                <div class="col-md conteudo">
+                  <p class="trabalho">
+                    &nbsp &nbsp Na existência de um campo elétrico,
+                    existe um movimento de arraste provocado pelo campo. Esse movimento é
+                    na direção da força elétrica 𝐹⃗ e tem uma ordem de grandeza de aproximadamente 10<sup>-4</sup>m/s.
+                    Como existe um movimento de arraste,
+                    há também uma velocidade de arraste 𝑣⃗, a qual provoca um arraste ordenado das cargas,
+                    em um sentido determinado, no condutor. Essa movimentação de cargas é denominada: corrente elétrica.</br></br>
+                    &nbsp &nbsp A corrente elétrica <b>(i)</b> por unidade de área transversal <b>(A)</b> define o módulo do vetor densidade de corrente <b>(J)</b>.
+                    $$ {J=\frac{i}{A} \space \space \space \space \space \space \space \space \space \space \space \space \space \space \space \space \space \space \space \space (1)} $$
+                    &nbsp &nbsp Já a corrente elétrica é definida como o fluxo total das cargas <b>(Q)</b> por unidade de tempo <b>(Δt)</b>. Sendo basicamente expressada como:
+                    $$ {i=\frac{Q}{\Delta t} \space \space \space \space \space \space \space \space \space \space \space \space \space \space \space \space \space \space \space \space (2)} $$
+                 </p>
+              </div>
+
+  </div></div></div>
+  <div class="blocototaldrude ">
+  <div class="overlay">
+  <div class='conteudo '>
+     </div> </div>
+  </div>
+  <span id="sentido"></span>
+<div class="bloco"><div class="container">
+  <div class="row">
+    <div class="col-md conteudo">
+      <h3 id="importante">Sentido, Direção e Condutividade</h3>
+      </br></br>
+      <h4>Sentido e Direção da Corrente Elétrica</h4>
+      <p class="trabalho">
+        &nbsp &nbsp Com  a movimentação  de cargas em uma determinada direção, é esperado que exista um sentido
+        para a corrente elétrica. Mas como determinar o sentido dessa grandeza a partir da sua carga?</br></br>
+        &nbsp &nbsp Se o movimento for de prótons, como no acelerador de partículas, por exemplo, haverá a movimentação de cargas positivas.
+        Já no caso da corrente elétrica gerada nos condutores usuais, o que ocorre é o arraste de elétrons. Desse modo,
+        o sentido convencional adotado é dado ao observar o movimento dos portadores de carga, atribuindo-o conforme o sentido
+        teórico ou real de cargas positivas.</br></br>
+        &nbsp &nbsp Nesse sentido, se a corrente elétrica for gerada por prótons, é adotado o sentido real dessa movimentação.
+        Todavia, se a corrente é produzida por elétrons, o sentido covencional é adotado pelo movimento teórico de cargas positivas.
+        Veja a imagem abaixo:
+      </p>
+      <p><img src="images/sentidocorrente.jpg" alt="Sentido da corrente elétrica" class="image2"></p>
+      </br></br>
+      <h4>Condutividade</h4>
+      <p class="trabalho">
+        &nbsp &nbsp Já a condutividade elétrica de um material representa a capacidade que
+        ele tem de transportar cargas elétricas, quando submetido a uma diferença de potencial.
+        Um material de condutividade alta tem uma facilidade de transportar cargas elétricas e, de maneira oposta,
+        um material com condutividade elétrica baixa
+        apresenta uma resistência maior ao transporte de cargas elétricas.</br></br>
+        &nbsp &nbsp A condutividade <b>(σ)</b> é dada pela razão entre a densidade de corrente <b>(J)</b> e o campo elétrico <b>(E)</b>, tal que:
+        $$ { \sigma = \frac{J}{E} \space \space \space \space \space \space \space \space \space \space \space \space \space \space \space \space \space \space \space \space (3.1)} $$
+        &nbsp &nbsp Ainda mais, a condutividade <b>(σ)</b> também pode ser expressa como:
+        $$ { \sigma = \frac{n \cdot e^2 \cdot \tau}{m} \space \space \space \space \space \space \space \space \space \space \space \space \space \space \space (3.2)} $$
+      </p>
+      <p><img src="images/condutabela.jpg" class="image" alt="tabela"></p>
+    </br></br>
+    <h4>Fatores que Afetam a Condutividade</h4>
+    <p class="trabalho">
+      &nbsp &nbsp A condutividade não é uma propriedade constante na natureza, ela varia entre um condutor e outro,
+      além de que pode ser alterada ou influenciada por alguns aspectos, tais como:
+    </p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md conteudo">
+      <p><strong>Temperatura</strong></p>
+      <p class="trabalho">
+         &nbsp &nbsp Ao aumentar a temperatura de um condutor, pode-se alterar sua condutividade,
+         tendo em vista que essa variação ocorre em virtude da excitação térmica dos átomos dos materiais.
+         Não é atoa que alguns aparelhos eletrônicos sensíveis costumam ser
+         acompanhados de mecanismos de resfriamento para manter a temperatura do condutor constante.
+         Por exemplo, o cooler em um notebook, que tem o papel de reduzir o calor gerado pelos componentes
+         da máquina.
+      </p>
+    </div>
+    <div class="col-md conteudo">
+      <p><img src="images/cooler.jpg" class="image" alt="cooler"></p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md conteudo">
+      <p><img src="images/grafico.jpg" class="image2" alt="grafico"></p>
+    </div>
+    <div class="col-md conteudo">
+      <p><strong>Impurezas</strong></p>
+      <p class="trabalho">
+        &nbsp &nbsp Ao se ter impurezas, ou seja, partículas de isolamento de elementos não condutores nos condutores elétricos,
+        pode haver impedimento do fluxo de corrente nos condutores, levando a uma diminuição nos níveis de condutividade
+        do material (essas partículas podem ser de origem natural ou por falhas de fabricação).</br>
+        &nbsp &nbsp Por exemplo, o nível de impureza em materiais semicondutores afeta a condutividade mais do que nos materiais condutores,
+        em alguns casos melhorando-a e em outros casos reduzindo a condutividade.
+        O gráfico ao lado mostra a relação da condutividade do alumínio e a quantidade de impurezas:
+      </p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md conteudo">
+      <p><strong>Frequência</strong></p>
+      <p class="trabalho">
+        &nbsp &nbsp Ao trabalhar com corrente alternada, ou seja, que oscila quando flui,
+        pode haver interferência da frequência da corrente elétrica, uma vez que quando muito aumentada,
+        acima de um certo limite, ocasiona em um fluxo de corrente no redor de um condutor e não através dele.
+        Essa situação é também conhecida como efeito pelicular, que ocorre normalmente quando a
+        frequência aumenta acima de 3GHz (ou 3.000.000.000 ciclos oscilatórios de corrente por segundo).
+      </p>
+    </div>
+    <div class="col-md conteudo">
+      <p><strong>Campos eletromagnéticos</strong></p>
+      <p class="trabalho">
+        &nbsp &nbsp Ao constatar a presença de campos eletromagnéticos ao redor do condutor elétrico,
+        sua condutividade pode ser alterada. Embora os condutores criem campos magnéticos quando conduzem corrente elétrica,
+        esses campos se encontram de forma perpendicular uns aos outros, o que não causa problema no fluxo de corrente.
+        Porém, quando se trata de campos externos, essa organização é independente,
+        o que pode atrapalhar o fluxo de corrente ou até interrompê-lo, dependendo de sua intensidade.
+      </p>
+    </div>
+  </div>
+
+</div></div></div>
+<div class="blocototaldrude ">
+<div class="overlay">
+<div class='conteudo '>
+</div></div></div>
+        <span id="leideohm"></span>
+        <div class="bloco"><div class="container">
+          <div class="row">
+            <div class="col-md conteudo">
+              <h3 id="importante">Lei de Ohm</h3>
+              <br>
+              <p class="trabalho">
+              &nbsp &nbsp Considere o segmento de um fio condutor de comprimento <b>L</b>, seção transversal <b>A</b>,
+              com uma corrente <b>i</b> e densidade de corrente <b>J</b>. Um esboço pode ser visto na Figura abaixo.</p>
+              <p><img src="images/secaoreta.jpg" class="image" alt="seção reta"></p>
+              <p class="trabalho">
+              &nbsp &nbsp Para um campo elétrico invariável, temos as equações (1) e (2) previamente formuladas.
+              </br></br>
+              &nbsp &nbsp Definindo <b>Q=n.e.Vol</b>, em que <b>Vol</b> é o volume do fio. Temos:
+              $$ {i = n \cdot e \cdot \frac{Vol}{\Delta t} } $$
+              &nbsp &nbsp Podemos reescrever o quociente do volume pelo tempo por um produto entre a área da
+              seção transversal do fio <b>(A)</b> e a velocidade <b>(v)</b> média dos elétrons. Vem que:
+              $$ {i = n \cdot e \cdot A \cdot v \space \space \space \space \space \space \space \space \space \space \space \space \space \space \space \space \space \space \space \space (4)} $$
+              &nbsp &nbsp Uma vez que os elétrons estão em constante colisão com os íons, se torna necessária
+              a definição de uma velocidade média. E pela segunda Lei de Newton temos:
+              $$ {F=m \cdot a} $$
+              &nbsp &nbsp Analogamente, se tratando de força elétrica, podemos reescrever como <b>F=e.E</b>.
+              Já a aceleração pode ser escrita como sendo <b>a=<sup>v</sup>/<sub>τ</sub></b>, em que <b>τ</b> é o tempo médio entre as colisões.
+              Dessa forma, isolando a velocidade temos:
+              $$ {v= \tau \cdot \frac{e \cdot E}{m}} $$
+              &nbsp &nbsp Então substituímos <b>v</b> na equação (4), vem que:
+              $$ {i = n \cdot e \cdot A \left ( \tau \cdot \frac{e \cdot E}{m} \right ) } $$
+              &nbsp &nbsp Podemos substituir <b>i</b> na equação (1), teremos:
+              $$ {J = \frac{n \cdot e \cdot A \left ( \tau \cdot \frac{e \cdot E}{m} \right )}{A} } $$
+              $$ {J = \frac{n \cdot e^2 \cdot \tau}{m} \cdot E } $$
+              &nbsp &nbsp Podemos substituir a condutividade <b>(σ)</b> definida na equação (3.2), ficamos com:
+              $$ { J = \sigma \cdot E \space \space \space \space \space \space \space \space \space \space \space \space \space \space \space \space \space \space \space \space (5.1)} $$
+              &nbsp &nbsp Finalmente, podemos reescrever essa equação de uma maneira mais conhecida: a famosa 1ª Lei de Ohm, temos:
+              $$ { U = R \cdot i \space \space \space \space \space \space \space \space \space \space \space \space \space \space \space \space \space \space \space \space (5.2)} $$
+              &nbsp &nbsp A 1ª Lei de Ohm determina que a diferença de potencial entre dois pontos <b>(U)</b>
+              de um resistor <b>(R)</b> é proporcional à corrente elétrica <b>(i)</b> que é estabelecida nele.
+              Além disso, de acordo com essa lei, a razão entre o potencial elétrico e a corrente elétrica é
+              sempre constante para resistores ôhmicos.</br></br>
+              &nbsp &nbsp Olhando a equação (5.1), podemos substituir em <b>J</b> a equação (1). Além disso, novamente,
+              como o fio condutor em questão possui um campo constante ao longo do tempo, então o campo elétrico <b>(E)</b>
+              será igual à tensão <b>(U)</b> dividida pelo comprimento do fio condutor <b>(L)</b>. Isolando a corrente, fica:
+              $$ {i = \frac{\sigma \cdot A \cdot U}{L} } $$
+              $$ { \frac{i}{U} = \frac{\sigma \cdot A}{L} } $$
+              &nbsp &nbsp Na equação (5.2), podemos dividir <b>(U)</b> em ambos os lados da igualdade, dessa forma
+              teremos que <b><sup>i</sup>/<sub>U</sub>=<sup>1</sup>/<sub>R</sub></b>. Assim, podemos substituir na equação
+              acima, tal que:
+              $$ { \frac{1}{R} = \frac{\sigma \cdot A}{L} } $$
+              &nbsp &nbsp Se definirmos a condutividade <b>(σ)</b> como sendo igual ao inverso da resistividade
+              <b>(ρ)</b>, teremos que:
+              $$ { \frac{1}{R} = \frac{ \frac{1}{\rho} \cdot A}{L} } $$
+              &nbsp &nbsp Finalmente, ao isolarmos a resistência <b>(R)</b>, chegaremos na 2ª Lei de Ohm, dada por:
+              $$ { R = \rho \cdot \frac{L}{A} \space \space \space \space \space \space \space \space \space \space \space \space \space \space \space \space \space \space \space \space (6)} $$
+              &nbsp &nbsp A resistência elétrica <b>(R)</b> é uma propriedade do corpo que é percorrido por uma corrente elétrica
+              <b>(i)</b>. Essa propriedade depende de fatores geométricos, como o comprimento <b>(L)</b> ou a área
+              transversal do corpo <b>(A)</b>, mas também depende de uma grandeza chamada de resistividade <b>(ρ)</b>.
+              Tal grandeza relaciona-se exclusivamente ao material do qual um corpo é formado. A 2ª Lei de Ohm é a lei
+              que relaciona a resistência elétrica a essas grandezas.
+            </p>
+
+</div></div></div>
+<div class="blocototaldrude ">
+<div class="overlay">
+<div class='conteudo '>
+</div></div></div>
+            <span id="aplicando"></span>
+            <div class="bloco"><div class="container">
+              <div class="row">
+                <div class="col-md conteudo">
+                  <h3 id="importante">Aplicando Conceitos</h3>
+                  <br>
+                  <p class="trabalho">
+                  &nbsp &nbsp Agora que entendemos sobre as Leis de Ohm, umas das relaçõess mais importantes
+                  de nossa existência, está na hora de aplicá-las. Para isso podemos pensar em um exercício simples
+                  envolvendo o Modelo de Drude para condutividade elétrica:
+                </br></br></br>
+                  <i>Utilize a lei de Ohm para calcular a resistência <b>(R)</b> entre as duas faces do cone mostrado na figura embaixo
+                     com resistividade <b>ρ</b> e raios <b>b</b> e <b>a</b>, respectivamente.  A densidade de corrente é uniforme ao longo de uma
+                     seção reta perpendicular ao eixo do objeto.</i></p>
+                  <p><img src="images/aplicacao.jpg" class="image" alt="aplicação"></p>
+                  </br>
+                  <p class="trabalho">
+                  &nbsp &nbsp Partimos da 2ª Lei de Ohm, expressada na equação (6). A partir da figura, vamos assumir
+                  que a horizontal é o eixo x, na qual temos <b>x=0</b> quando cone tem raio <b>a</b>, e <b>x=L</b>
+                  quando o cone tem raio <b>b</b>. Uma vez que a corrente está fluindo entre as bases devemos usar:
+                  $$ {dR = \rho \int \frac{1}{A(x)} \cdot dx} $$
+                  &nbsp &nbsp Temos, então, uma área em função de x. Para calcular essa área, vamos pensar que o
+                  condutor diminui de raio <b>(r)</b> linearmente, ou seja, de acordo com uma função do 1º grau dada por:
+                  $$ {r=c \cdot x+d} $$
+                  &nbsp &nbsp Devemos, agora, achar o valor das constantes <b>c</b> e <b>d</b>. Para isso, vamos substituir
+                  os valores conhecidos das extremidades.</br></br>
+                  Para x=0, temos:
+                  $$ {a=c \cdot 0+d} $$
+                  $$ {d=a} $$
+                  Para x=L, temos:
+                  $$ {b=c \cdot L+a} $$
+                  $$ {c= \frac{b-a}{L}} $$
+                  Logo, a função do 1º grau fica:
+                  $$ {r(x)= \frac{b-a}{L} \cdot x + a} $$
+                  &nbsp &nbsp Como a área da seção transversão do cone é na forma de um círculo, então podemos substituir
+                  o valor do raio encontrado acima, vem que:
+                  $$ {A(x)= \pi \cdot \left ( \frac{b-a}{L} \cdot x + a \right )^2 } $$
+                  &nbsp &nbsp Substituímos o valor da área na integral, teremos:
+                  $$ {R= \rho \int_{0}^{L} \frac{1}{ \pi \cdot \left ( \frac{b-a}{L} \cdot x + a \right )^2 } \cdot dx} $$
+                  $$ {R= \frac{\rho}{\pi} \int_{0}^{L} \frac{1}{ \left ( \frac{b-a}{L} \cdot x + a \right )^2 } \cdot dx} $$
+                  &nbsp &nbsp Devemos, enfim, resolver a integral. Para facilitar os cálculos, vamos substituir as constantes
+                  <b>c</b> e <b>d</b>. Calculamos como:
+                  $$ {R= \frac{\rho}{\pi} \int_{0}^{L} \frac{1}{ \left ( c \cdot x + d \right )^2 } \cdot dx} $$
+                  $$ {R= - \frac{\rho}{\pi} \cdot \frac{1}{c} \cdot \frac{1}{c \cdot x + d} \Biggr|_{0}^{L} } $$
+                  &nbsp &nbsp Aplicando os limites de integração e substituindo os valores das constantes <b>c</b> e <b>d</b>, temos:
+                  $$ {R=\frac{- \rho \cdot L}{\left [ b-a \right ] \cdot \pi} \cdot \left [ \frac{1}{b} - \frac{1}{a} \right ] } $$
+                  &nbsp &nbsp Simplificando, finalmente, temos que a resistência entre as duas faces do cone será:
+                  $$ {\boxed{ R= \frac{\rho \cdot L}{a \cdot b \cdot \pi} } } $$
+                </p>
+</div></div></div>
+<div class="blocototaldrude ">
+<div class="overlay">
+<div class='conteudo '>
+</div></div></div>
+        <span id="quiz"></span>
+        <div class="bloco"><div class="container">
+          <div class="row">
+            <div class="col-md conteudo">
+              <h3 id="quiz">Teste os Seus Conhecimentos</h3>
+           </div>
+        </div></div></div>
+
+      <div class="container">
+      <div class="row">
+        <div class="col-md-8 justify-content-md-center">
+          <br>
+        <p class="perguntas"><b>1.</b> As seguintes afirmações são verdadeiras ou falsas?
+        </p>
+
+          <div class="form-check">
+            <form action="">
+
+            <label class="form-check-label" for="p1r0">
+              <p class="perguntas">a) Existem condutores que não possuem corrente elétrica em seu interior.  </p>
+            </label>
+            <select  type="checkbox" name="p1" id="p1r0"  >
+              <option value="0">Falso</option>
+              <option value="1">Verdadeiro</option>
+            </select>
+          <br><br><br>
+
+            <label class="form-check-label" for="p1r1">
+              <p class="perguntas">b) A velocidade de arraste em condutores não provoca uma corrente elétrica em seu interior.</p>
+            </label>
+
+            <select  type="checkbox" name="p1" id="p1r1"  >
+              <option value="0">Falso</option>
+              <option value="1">Verdadeiro</option>
+            </select>
+          <br><br><br>
+
+            <label class="form-check-label" for="p1r2">
+              <p class="perguntas">c) Em circuitos elétricos, não importa qual carga esteja em movimento para considerar o sentido da corrente convencional.</p>
+            </label>
+            <select  type="checkbox" name="p1" id="p1r2" >
+              <option value="0">Falso</option>
+              <option value="1">Verdadeiro</option>
+            </select>
+          <br><br><br>
+            <label class="form-check-label" for="p1r3">
+              <p class="perguntas">d)  Quanto menor a condutividade elétrica, maior a capacidade do material em transportar cargas elétricas.</p>
+            </label>
+            <select  type="checkbox" name="p1" id="p1r3" >
+              <option value="0">Falso</option>
+              <option value="1">Verdadeiro</option>
+            </select>
+          <br><br><br>
+            <label class="form-check-label" for="p1r4">
+              <p class="perguntas">e)  A corrente elétrica é dada pela razão da unidade de carga Q por um intervalo de tempo Δt.</p>
+            </label>
+            <select  type="checkbox" name="p1" id="p1r4" >
+              <option value="0">Falso</option>
+              <option value="1">Verdadeiro</option>
+            </select>
+            <br><br><br>
+            <label class="form-check-label" for="p1r5">
+              <p class="perguntas">f)  Não existe diferença entre densidade de corrente e corrente elétrica.</p>
+            </label>
+            <select  type="checkbox" name="p1" id="p1r5" >
+              <option value="0">Falso</option>
+              <option value="1">Verdadeiro</option>
+            </select>
+            <br><br><br>
+            <label class="form-check-label" for="p1r4">
+              <p class="perguntas">g)  A condutividade elétrica é uma propriedade sempre constante, sendo afetada apenas por condições ambientais e externas ao material.</p>
+            </label>
+            <select  type="checkbox" name="p1" id="p1r4" >
+              <option value="0">Falso</option>
+              <option value="1">Verdadeiro</option>
+            </select>
+            <br><br><br>
+            <a href="#g1">CONFIRA O GABARITO</a>
+          </div>
+        </form>
+        </div>
+      </div>
+
+</br></br>
+         <div class="bloco"><div class="container">
+         <div class="row">
+         <div class="col-md conteudo">
+         <h3 id="quiz">Gabarito</h3>
+         </div>
+         </div></div></div>
+
+              <h4>Questão 1</h4>
+            <div>
+             <p id="g1">A – <b>Verdadeiro</b>. Em condutores que não existe campo elétrico em seu interior, não existe corrente elétrica.</p>
+             <p>B – <b>Falso</b>. A velocidade de arraste, mesmo sendo muito pequena, provoca uma corrente elétrica no interior do condutor.</p>
+             <p>C – <b>Verdadeiro</b>. O sentido convencional da corrente elétrica se mantem o mesmo, independente do sinal da carga que esteja em movimento.</p>
+             <p>D – <b>Falso</b>. Quanto menor for a condutividade elétrica de um material, mais dificuldade ele terá para transportar cargas elétricas.</p>
+             <p>E – <b>Verdadeiro</b>. i=Q/Δt</p>
+             <p>F – <b>Falso</b>. A densidade de corrente descreve como as cargas fluem em determinado ponto. Por outro lado, a corrente elétrica descreve como as cargas fluem através de um objeto estendido, como um fio.</p>
+             <p>G – <b>Falso</b>. Já que a condutividade também é afetada por questões internas ao material, tais como a presença de impurezas na estrutura microscópica.</p>
+            </div>
+          </div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <span id="referencias"></span>
+  <div class="row">
+            <div class="col-md conteudo">
+              <h3 id="referencias">Referências</h3>
+            <br>
+            <p>YOUNG & FREEDMAN. <b>Física III: Eletromagnetismo</b>. São Paulo, 2015.
+            </p>
+            <p>HELERBROCK, Rafael. <b>Lei de Ohm</b>. Disponível em: <a href="https://brasilescola.uol.com.br/fisica/a-lei-ohm.htm" target="_blank" rel="noopener noreferrer">https://brasilescola.uol.com.br/fisica/a-lei-ohm.htm</a>. Acesso em: 27 de Janeiro de 2021.
+            </p>
+            <p>FOXLUX. <b>4 fatores que afetam a condutividade elétrica</b>. Disponível em: <a href="https://www.foxlux.com.br/blog/dicas/4-fatores-que-afetam-a-condutividade-eletrica" target="_blank">https://www.foxlux.com.br/blog/dicas/4-fatores-que-afetam-a-condutividade-eletrica"</a>. Acesso em: 27 de Janeiro de 2021.
+            </p>
+            <p>AMORIM, Bernardo Corrêa. <b>O Modelo de Drude para Interação com Metais</b>. Disponível em: <a href="http://www.ifsc.usp.br/~strontium/Teaching/Material2018-1%20SFI5708%20Eletromagnetismo/Monografia%20-%20Bernardo%20-%20Modelo%20Drude.pdf" target="_blank">http://www.ifsc.usp.br/~strontium/Teaching/Material2018-1%20SFI5708%20Eletromagnetismo/Monografia%20-%20Bernardo%20-%20Modelo%20Drude.pdf"</a>. Acesso em: 27 de Janeiro de 2021.
+            </p>
+            <p>KÍTOR, G. L. <b>Condutividade Elétrica</b>. Disponível em: <a href="https://www.infoescola.com/fisica/condutividade-eletrica/" target="_blank" rel="noopener noreferrer">https://www.infoescola.com/fisica/condutividade-eletrica/</a>. Acesso em: 27 de Janeiro de 2021.
+            </p>
+            <p>REIS, Fábio. <b>Curso de Eletrônica - Condutores, semicondutores e isolantes. Bóson Treinamentos em ciência e tecnologia</b>. Disponível em: <a href="http://www.bosontreinamentos.com.br/eletronica/curso-de-eletronica/curso-de-eletronica-condutores-semicondutores-e-isolantes" target="_blank" rel="noopener noreferrer">http://www.bosontreinamentos.com.br/eletronica/curso-de-eletronica/curso-de-eletronica-condutores-semicondutores-e-isolantes</a>. Acesso em: 27 de Janeiro de 2021.
+            </p>
+            </div>
+           </div>
+      </div>
+    </div>
+
+    <div class="footer">
+        <div class="row">
+          <div class="col-md">
+            <i>Site desenvolvido como critério de avaliação no curso  de Fundamentos de Eletromagnetismo - UFMG.</i><br>
+            <i>Integrantes da Equipe: Bruno Fernandes Cardoso, Guilherme Francisco Antunes Silva e Robert Gustavo Silva Pereira.</i>
+          </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</body>
+
+</html>
